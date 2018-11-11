@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Front-End-Test</title>
+    <!--BOOTSTRAP CSS AND JS LIBRARIES-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--JQUERY JS LIBRARY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--FONT AWESOME ICON LIBRARY-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!--LINK TO MAIN CSS-->
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <!--GOOGLE FONT LIBRARY-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <!--LEAFLET AND MAPBOX LIBRARY-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <!--TOP CONTACTS BAR-->
+    <header class="container-fluid background-color-dwhite row-bot-border padding-top-bot-10 p-relative">
+        <div class="container padding-tb-15">
+            <div class="row">
+                <div class="pull-left col-md-8">
+                    <span><i class="fas fa-globe-asia"></i>ENGLISH</span>
+                    <span><i class="fas fa-key"></i>LOGIN</span>
+                    <span><i class="fas fa-phone"></i>CALL US : (123) 456 - 7890</span>
+                    <span><i class="far fa-comment"></i>Support : (123) 456 - 7890</span>
+                </div>
+                <div class="pull-right col-md-4s">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-skype"></i>
+                    <i class="fab fa-vimeo-v"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--TOP NAV BAR-->
+    <div class="container-fluid height-100">
+        <div class="row">
+            <nav class="navbar navbar-default nav-bar-mod margin-0">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <img src="../images/enar-logo.png" alt="Enar Logo" class="logo-size pull-left top-nav-logo">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    HOME
+                                </a>
+                                <ul class="dropdown-menu dropdown-design padding-0">
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V1</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V2</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V3</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V4</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V5</a></li>
+                                    <li class="dropdown-submenu drop-li-design top-nav-li-padding">
+                                        <a class="test drop-a-design" tabindex="-1" href="#">
+                                            HOME ONE PAGE
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu padding-0">
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME ONE PAGE V1</a></li>
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME ONE PAGE V2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu drop-li-design top-nav-li-padding">
+                                        <a class="test drop-a-design" tabindex="-1" href="#">
+                                            HOME BLOG
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu padding-0">
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME BLOG TIMELINE</a></li>
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME BLOG MASONRY</a></li>
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME BLOG LIST</a></li>
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME BLOG STANDARD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu drop-li-design top-nav-li-padding">
+                                        <a class="test drop-a-design" tabindex="-1" href="#">
+                                            HOME WITH SIDE MENU
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu padding-0">
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME BOXED WITH SIDE MENU</a></li>
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME FULL WITH SIDE MENU</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu drop-li-design top-nav-li-padding">
+                                        <a class="test drop-a-design" tabindex="-1" href="#">
+                                            HOME TRANSPARENT HEADER
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu padding-0">
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME TRANSPARENT DARK</a></li>
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME TRANSPARENT LIGHT</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME MENU BUTTON MODE</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    PAGES
+                                </a>
+                                <ul class="dropdown-menu dropdown-design padding-0">
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V1</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V2</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V3</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V4</a></li>
+                                    <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" href="#">HOME PAGE V5</a></li>
+                                    <li class="dropdown-submenu drop-li-design top-nav-li-padding">
+                                        <a class="test drop-a-design" tabindex="-1" href="#">
+                                            HOME ONE PAGE
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu padding-0">
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME ONE PAGE V1</a></li>
+                                            <li class="drop-li-design top-nav-li-padding"><a class="drop-a-design" tabindex="-1" href="#">HOME ONE PAGE V2</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    SLIDERS
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    SHORTCODES
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    PORTFOLIO
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    BLOG
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    SHOP
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    TEAM
+                                </a>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search color-sea-green"></i></button>
+                            </div>
+                        </form>
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle logo-bar-design" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-shopping-cart shopping-cart"><span class="item-count">3</span></i>
+                                </a>
+                                <ul class="dropdown-menu padding-0 width-250">
+                                    <li>
+                                        <div class="col-sm-12 shop-cart-head-background">
+                                            <h3 class="font-size-15 h3-margin-15">SHOPPING CART</h3>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-12 margin-top-bot-10 padding-0">
+                                                <i class="fas fa-times remove-item"></i>
+                                                <img class="shop-img pull-left" src="../images/cart-img.jpg">
+                                                <div class="pull-left">
+                                                    <span class="d-block margin-right-10">Life is too short</span>
+                                                    <span class="d-block margin-right-10 color-light-grey">1x</span>
+                                                </div>
+                                                <div class="pull-left margin-top-15">
+                                                    <span class="d-block margin-right-10 color-light-grey">$ 45</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 margin-top-bot-10 padding-0">
+                                                <i class="fas fa-times remove-item"></i>
+                                                <img class="shop-img pull-left" src="../images/cart-img-1.jpg">
+                                                <div class="pull-left">
+                                                    <span class="d-block margin-right-10">Life is too short</span>
+                                                    <span class="d-block margin-right-10 color-light-grey">2x</span>
+                                                </div>
+                                                <div class="pull-left margin-top-15">
+                                                    <span class="d-block margin-right-10 color-light-grey">$ 40</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-sm-12 shop-cart-amount">
+                                            <span class="color-sea-green pull-left padding-6">$ 85</span>
+                                            <a class="pull-right" href="#"></a>
+                                            <button class="pull-right btn view-cart-btn">View Cart</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+    <!--UNFINISHED SLIDER-->
+    <div class="container-fluid padding-0">
+        <img class="width-100 height-auto" src="../images/slider-1.png">
+    </div>
+    <!--RANDOM DIV WITH UNBELIEVABLE WORDS-->
+    <div class="container-fluid background-color-dgrey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="color-white text-center"><b>Best HTML5 Theme Ever!</b></h3>
+                    <p class="color-light-grey text-center">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                        in some form, by injected humour of this randomised words which don't look even slightly believable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--DIV WITH DIFFERENT BUT ALSO THE SAME INFORMATION-->
+    <div class="container-fluid margin-top-bot-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 margin-top-bot-30">
+                    <div class="row">
+                        <div class="pull-left">
+                            <i class="fas fa-desktop font-size-40 color-sea-green icon-circle-border"></i>
+                        </div>
+                        <div class="pull-left width-60 padding-left-25">
+                            <h3 class="margin-top-0">Super Coding</h3>
+                            <span>
+                                There are many variations of demo text passed sages of Lorem Ipsum available
+                                the majority There are many variations of demo.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 margin-top-bot-30">
+                    <div class="row">
+                        <div class="pull-left">
+                            <i class="fas fa-tablet-alt font-size-40 color-sea-green icon-circle-border"></i>
+                        </div>
+                        <div class="pull-left width-60 padding-left-25">
+                            <h3 class="margin-top-0">Best User Interface</h3>
+                            <span>
+                                There are many variations of demo text passed sages of Lorem Ipsum available the majority
+                                There are many variations of demo.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 margin-top-bot-30">
+                    <div class="row">
+                        <div class="pull-left">
+                            <i class="fas fa-puzzle-piece font-size-40 color-sea-green icon-circle-border"></i>
+                        </div>
+                        <div class="pull-left width-60 padding-left-25">
+                            <h3 class="margin-top-0">Unique Design</h3>
+                            <span>
+                                There are many variations of demo text passed sages of Lorem Ipsum available the
+                                majority There are many variations of demo.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--NO COMMENT (UNFINISHED BUSSINESS WITH AJAX)-->
+    <div class="container-fluid padding-0">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6 padding-0">
+                <img class="width-100" src="../images/progress-img.jpg">
+            </div>
+        </div>
+    </div>
+    <!--NO TIME LEFT FOR THIS ONE :/ (SOME JS REQUIRED)-->
+    <div class="container-fluid margin-top-bot-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2><b>Why Choose Us?</b></h2>
+                </div>
+                <div class="col-md-6">
+                    <h2><b>Why Work With Us?</b></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SO CLOSE YET SO FAR (HOVER BENEATH OUR SERVICES NOT DONE(JUST IGNORE IT))-->
+    <div class="container-fluid margin-top-bot-40">
+        <div class="container">
+            <div class="row">
+                    <h2 class="text-center margin-top-bot-60">
+                        <div class="row">
+                            Our Services
+                        </div>
+                        <span class="line margin-top-15">
+                            <span class="dot"></span>
+                        </span>
+                    </h2>
+                <div class="col-md-6">
+                    <div class="row margin-top-bot-20">
+                        <i class="fas fa-desktop font-size-40 pull-left icon-circle"></i>
+                        <div class="pull-left width-65 padding-left-25">
+                            <h3 class="margin-top-0">Premium Sliders Included</h3>
+                            <span>There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+                        </div>
+                    </div>
+                    <div class="row margin-top-bot-20">
+                        <i class="fas fa-tablet-alt font-size-40 pull-left icon-circle"></i>
+                        <div class="pull-left width-65 padding-left-25">
+                            <h3 class="margin-top-0">100% Responsive Layout</h3>
+                            <span>There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+                        </div>
+                    </div>
+                    <div class="row margin-top-bot-20">
+                        <i class="fas fa-flask font-size-40 pull-left icon-circle"></i>
+                        <div class="pull-left width-65 padding-left-25">
+                            <h3 class="margin-top-0">Powerful Performance</h3>
+                            <span>There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img class="max-width-100" src="../images/our-service-img.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AJAX REQUIRED TO CONTINUE THIS PART-->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="col-md-4 col-sm-4 margin-top-bot-60">
+                <div class="">
+                    <h6 class="color-sea-green">
+                        <div class="hexagon">
+                            <span class="hexagon-inner-1">573</span>
+                            <span class="hexagon-inner-2 text-uppercase">Monthly</span>
+                        </div>
+                    </h6>
+                    <h6 class="text-center monthly-name-padding">
+                        <span class="monthly-name text-center text-uppercase">Starter</span>
+                    </h6>
+                    <ul class="padding-0">
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>Free setup</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-times times"></i>
+                            <span>50 Websites</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>55GBStorage</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>50GB Bandwidth</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-times times"></i>
+                            <span>9 months Support</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>Unlimited Subdomains</span>
+                        </li>
+                        <li class="text-center color-light-grey pricing-li-border padding-top-bot-40 border-radius-bot-sides">
+                            <a class="order-btn">
+                                <i class="fas fa-shopping-cart cart"></i>
+                                Order Now
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 margin-top-bot-60">
+                <div class="">
+                    <h6 class="color-sea-green">
+                        <div class="hexagon">
+                            <span class="hexagon-inner-1">573</span>
+                            <span class="hexagon-inner-2 text-uppercase">Monthly</span>
+                        </div>
+                    </h6>
+                    <h6 class="text-center monthly-name-padding">
+                        <span class="monthly-name text-center text-uppercase">Starter</span>
+                    </h6>
+                    <ul class="padding-0">
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>Free setup</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-times times"></i>
+                            <span>50 Websites</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>55GBStorage</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>50GB Bandwidth</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-times times"></i>
+                            <span>9 months Support</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>Unlimited Subdomains</span>
+                        </li>
+                        <li class="text-center color-light-grey pricing-li-border padding-top-bot-40 border-radius-bot-sides">
+                            <a class="order-btn">
+                                <i class="fas fa-shopping-cart cart"></i>
+                                Order Now
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 margin-top-bot-60">
+                <div class="">
+                    <h6 class="color-sea-green">
+                        <div class="hexagon">
+                            <span class="hexagon-inner-1">573</span>
+                            <span class="hexagon-inner-2 text-uppercase">Monthly</span>
+                        </div>
+                    </h6>
+                    <h6 class="text-center monthly-name-padding">
+                        <span class="monthly-name text-center text-uppercase">Starter</span>
+                    </h6>
+                    <ul class="padding-0">
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>Free setup</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-times times"></i>
+                            <span>50 Websites</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>55GBStorage</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>50GB Bandwidth</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-times times"></i>
+                            <span>9 months Support</span>
+                        </li>
+                        <li class="text-center padding-top-bot-10 pricing-li-border color-light-grey">
+                            <i class="fas fa-check check"></i>
+                            <span>Unlimited Subdomains</span>
+                        </li>
+                        <li class="text-center color-light-grey pricing-li-border padding-top-bot-40 border-radius-bot-sides">
+                            <a class="order-btn">
+                                <i class="fas fa-shopping-cart cart"></i>
+                                Order Now
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--CONTACT US FORM-->
+    <div class="container-fluid">
+        <div class="container">
+            <h2 class="text-center text-uppercase padding-bot-20">
+
+                Contact Us
+            </h2>
+            <div class="row margin-top-bot-40">
+                <h2 class="pull-left text-uppercase color-sea-green">
+                    <i class="far fa-envelope-open font-size-25 pull-left margin-right-left-20"></i>
+                    Get On Touch
+                </h2>
+            </div>
+            <form class="hm_contact_form">
+                <div class="form-group row margin-top-bot-40">
+                    <label for="inputName" class="col-sm-2 col-form-label color-light-grey">
+                        Name
+                        <span class="color-red"> *</span>
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputName" placeholder="Full Name">
+                    </div>
+                </div>
+                <div class="form-group row margin-top-bot-40">
+                    <label for="inputEmail" class="col-sm-2 col-form-label color-light-grey">
+                        Email
+                        <span class="color-red"> *</span>
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="mail@sitename.com">
+                    </div>
+                </div>
+                <div class="form-group row margin-top-bot-40">
+                    <label for="inputSubject" class="col-sm-2 col-form-label color-light-grey">Subject</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputSubject">
+                    </div>
+                </div>
+                <div class="form-group row margin-top-bot-40">
+                    <label for="FormControlTextarea" class="col-sm-2 color-light-grey">
+                        Message
+                        <span class="color-red"> *</span>
+                    </label>
+                    <div class=" col-sm-10">
+                        <textarea class="form-control" id="FormControlTextarea" rows="8"></textarea>
+                    </div>
+                </div>
+                <div class="form_row clearfix">
+                    <button class="col-sm-10 pull-right padding-top-bot-10 background-color-sea-green border-none border-radius-5 color-white">
+                        <i class="fas fa-check color-white"></i>
+                        Send Your Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--THE PART WHERE I DIDN'T DO MISTAKE(I HOPE)-->
+    <div class="container-fluid background-color-dark-purple margin-top-40">
+        <div class="container">
+            <div class="row margin-top-bot-40">
+                <h2 class="color-white text-center">Our Location</h2>
+            </div>
+        </div>
+    </div>
+    <!--UNFINISHED MAP API-->
+    <div class="container-fluid padding-0">
+            <div id='map'></div>
+    </div>
+    <!--SECTION BEFORE THE FOOTER-->
+    <div class="container-fluid background-color-dgrey padding-top-bot-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="">
+                        <div class="col-sm-12">
+                            <h6 class="color-white font-size-20">Company Info</h6>
+                            <img src="../images/enar-logo-white.png" class="logo-size margin-top-bot-20">
+                            <div class="">
+                                <span class="color-light-grey">
+                                    There are many Purchase Now There are many variations of passages of Lorem Ipsum
+                                    available, but the majority.
+                                </span>
+                            </div>
+                            <div class="margin-top-bot-40">
+                                <button class="bot-read-more">> Read More</button>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-12">
+                                <h6 class="color-white font-size-20">Newsletter Signup</h6>
+                                <div class="">
+                                    <span class="color-light-grey">
+                                        By subscribing to our mailing list you will always be update with the latest news :
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <form>
+                                    <div class="col-sm-12 padding-0 input-group margin-top-20">
+                                        <input class="form-control width-85" type="email" placeholder="Your Email Here ...">
+                                        <div  class="input-group-append">
+                                        <button class="border-none background-color-sea-green email-btn width-15">
+                                            <i class="far fa-paper-plane color-white"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h6 class="color-white font-size-20">Recent Posts</h6>
+                            <ul class="padding-0">
+                                <li class="margin-top-20">
+                                    <div class="row p-relative">
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="hover-transition">
+                                                <img class="bot-img-s border-radius-5 img-hover" src="../images/web-bot-img-1.jpg">
+                                                <div class="img-overlay">
+                                                    <i class="fas fa-share-alt share-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="row margin-bot-10">
+                                                <span class="color-white">Best HTML5 Theme</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">2015/01/23</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">Tutorials, Videos</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                                <li class="margin-top-15">
+                                    <div class="row p-relative">
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="hover-transition">
+                                                <img class="bot-img-s border-radius-5 img-hover" src="../images/web-bot-img-2.jpg">
+                                                <div class="img-overlay">
+                                                    <i class="fas fa-share-alt share-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="row margin-bot-10">
+                                                <span class="color-white">Responseve Design</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">2015/02/17</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">Audio, Videos</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                                <li class="margin-top-15">
+                                    <div class="row p-relative">
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="hover-transition">
+                                                <img class="bot-img-s border-radius-5 img-hover" src="../images/web-bot-img-3.jpg">
+                                                <div class="img-overlay">
+                                                    <i class="fas fa-share-alt share-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="row margin-bot-10">
+                                                <span class="color-white">Many Home Pages</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">2015/02/17</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">Tutorials, Design</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                                <li class="margin-top-15">
+                                    <div class="row p-relative">
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="hover-transition">
+                                                <img class="bot-img-s border-radius-5 img-hover" src="../images/web-bot-img-4.jpg">
+                                                <div class="img-overlay">
+                                                    <i class="fas fa-share-alt share-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pull-left d-block overflow">
+                                            <div class="row margin-bot-10">
+                                                <span class="color-white">Best HTML5 Theme</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">2015/01/23</span>
+                                            </div>
+                                            <div class="row margin-bot-10">
+                                                <span class="light-grey-letter">Tutorials, Videos</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="row-bot-border">
+                        <h6 class="color-white font-size-20">Cloud Tags</h6>
+                        <div class="row margin-top-bot-30">
+                            <span class="c-tag">WORDPRESS</span>
+                            <span class="c-tag">CREATIVE</span>
+                        </div>
+                        <div class="row margin-top-bot-30">
+                            <span class="c-tag">CSS3</span>
+                            <span class="c-tag">DESIGN</span>
+                        </div>
+                        <div class="row margin-top-bot-30">
+                            <span class="c-tag">GRAPHIC</span>
+                            <span class="c-tag">HTML5</span>
+                            <span class="c-tag margin-auto">SEO</span>
+                        </div>
+                        <div class="row margin-top-bot-30">
+                            <span class="c-tag">CSS3</span>
+                            <span class="c-tag">WEB DESIGN</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h6 class="color-white font-size-20 margin-top-20">FLICKER WIDGET</h6>
+                        </div>
+                        <div class="margin-top-20 col-sm-12">
+                            <img class="widget-img" src="../images/cycle-1.jpg">
+                            <img class="widget-img" src="../images/cycle-2.jpg">
+                            <img class="widget-img" src="../images/cycle-3.jpg">
+                        </div>
+                        <div class="margin-top-10 col-sm-12">
+                            <img class="widget-img" src="../images/cycle-4.jpg">
+                            <img class="widget-img" src="../images/cycle-5.jpg">
+                            <img class="widget-img" src="../images/cycle-6.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="footer_row row-bot-border">
+                                <h6 class="color-white font-size-20">Best Author</h6>
+                                <div class="author-div margin-top-bot-30 height-125">
+                                    <span>
+                                        <img class="author-img border-radius-5" src="../images/best-author.jpg">
+                                        CHARLIE CHAPLIN
+                                    </span>
+                                    <div>
+                                        <div class="col-md-6 col-sm-3 padding-0 margin-top-10">
+                                            <span><i class="fab fa-twitter web-bot-icon"></i></span>
+                                            <span><i class="fab fa-facebook-f web-bot-icon"></i></span>
+                                            <span><i class="fab fa-google-plus-g web-bot-icon"></i></span>
+                                            <span><i class="fab fa-linkedin-in web-bot-icon"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="footer_row">
+                                <h6 class="color-white font-size-20 margin-top-bot-20">Custom Video</h6>
+                                <span class="p-absolute play-icon color-white">
+                                    <i class="far fa-play-circle rotate-120"></i>
+                                </span>
+                                <img class="width-100 p-relative border-radius-5 background-color-sea-green-opacity-05"
+                                     src="../images/video-img.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOTER-->
+    <footer class="padding-top-bot-40 footer-b-color">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 color-light-grey pull-left">
+                        <span>
+                            Copyright © 2015 Powered By
+                            <span class="footer-link">IdealTheme</span>
+                            -
+                            <span class="footer-link">Enar Theme</span>
+                            - All Rights Reserved
+                        </span>
+                    </div>
+                    <div class="col-md-6 pull-left">
+                        <ul class="pull-right">
+                            <li class="footer-li pull-left">Home</li>
+                            <li class="color-light-grey margin-right-left-20 pull-left">/</li>
+                            <li class="footer-li pull-left">About Us</li>
+                            <li class="color-light-grey margin-right-left-20 pull-left">/</li>
+                            <li class="footer-li pull-left">Help Center</li>
+                            <li class="color-light-grey margin-right-left-20 pull-left">/</li>
+                            <li class="footer-li pull-left">Contact Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!--SOME OUTER JS LIBRARIES-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <script src="../script/script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHj
+    OMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+
+</html>
